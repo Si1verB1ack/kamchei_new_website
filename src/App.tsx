@@ -8,7 +8,6 @@ import Home from "./components/Home";
 import Footer from "./components/Footer";
 import HowItWorks from "./components/HowItWorksSection";
 import FAQ from "./components/FAQ";
-import logo from "./assets/images/logo.jpg";
 
 // Color palette
 const colors = {
