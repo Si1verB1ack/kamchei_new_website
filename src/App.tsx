@@ -63,9 +63,9 @@ function App() {
             path="/"
             element={
               <main className="w-full">
-                <Home colors={colors} />
+                <Home/>
                 <HowItWorks />
-                <Eligibility colors={colors} />
+                <Eligibility/>
               </main>
             }
           />
@@ -91,7 +91,7 @@ function App() {
             path="/eligibility"
             element={
               <main className="flex flex-grow w-full items-center justify-center bg-gray-50">
-                <Eligibility colors={colors} />
+                <Eligibility />
               </main>
             }
           />
