@@ -8,6 +8,7 @@ import Home from "./components/Home";
 import Footer from "./components/Footer";
 import HowItWorks from "./components/HowItWorksSection";
 import FAQ from "./components/FAQ";
+import logo from "./assets/images/logo.jpg";
 
 // Color palette
 const colors = {
@@ -26,26 +27,24 @@ function App() {
     // Simulate loading resources
     setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 2000);
   }, []);
 
   if (loading) {
     return (
       <div className="flex items-center justify-center h-screen bg-white px-4">
         <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
+          initial={{ opacity: 0, scale: 1 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{
             duration: 0.5,
             repeat: Infinity,
             repeatType: "reverse",
           }}
         >
-          <img
-            src="/logo.svg"
-            alt="KamChei"
-            className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24"
-          />
+          <div className="flex flex-col items-center">
+            <motion.div className="w-12 h-12 border-4 border-t-transparent border-orange-500 rounded-full animate-spin"></motion.div>
+          </div>
         </motion.div>
       </div>
     );
@@ -63,9 +62,9 @@ function App() {
             path="/"
             element={
               <main className="w-full">
-                <Home/>
+                <Home />
                 <HowItWorks />
-                <Eligibility/>
+                <Eligibility />
               </main>
             }
           />
