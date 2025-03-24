@@ -33,7 +33,7 @@ const Contact = ({ colors }: Props) => {
   ];
 
   return (
-    <section className={`py-16 bg-${colors.primaryLight}`} id="contact">
+    <section className={`py-16 md:py-24 bg-${colors.primaryLight}`} id="contact">
       <div className="container mx-auto px-4">
         <motion.h2
           className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center"
@@ -44,7 +44,13 @@ const Contact = ({ colors }: Props) => {
           Contact <span className={`text-${colors.primary}`}>Us</span>
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        {/* Grid Layout */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
           {contactMethods.map((item, index) => (
             <motion.div
               key={index}
@@ -54,7 +60,7 @@ const Contact = ({ colors }: Props) => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div
-                className={` bg-orange-50 text-${colors.accent} bg-${colors.primaryLight} rounded-full w-12 h-12 flex items-center justify-center mb-4`}
+                className={`bg-orange-50 text-${colors.accent} bg-${colors.primaryLight} rounded-full w-12 h-12 flex items-center justify-center mb-4`}
               >
                 {item.icon}
               </div>
@@ -62,6 +68,7 @@ const Contact = ({ colors }: Props) => {
                 {item.title}
               </h3>
               <p className="text-gray-600">{item.description}</p>
+
               {index === 2 && (
                 <div className="mt-4 flex space-x-4">
                   <a
@@ -82,7 +89,7 @@ const Contact = ({ colors }: Props) => {
               )}
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
