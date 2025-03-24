@@ -105,14 +105,16 @@ const Navbar = ({ colors }: Props) => {
                 </Link>
               </motion.div>
             ))}
-            <motion.button
+            <motion.a
+            target="_blank"
+            href="https://t.me/KamCheiCS"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: 0.5 }}
               className={`cursor-pointer bg-${colors.primary} hover:bg-${colors.primaryDark} text-white px-5 py-2 rounded-lg font-medium transition-all shadow-md hover:shadow-lg`}
             >
               Apply Now
-            </motion.button>
+            </motion.a>
           </div>
 
           {/* Mobile menu button */}
@@ -157,11 +159,13 @@ const Navbar = ({ colors }: Props) => {
                   {link.name}
                 </Link>
               ))}
-              <button
+              <a
+              target="_blank"
+              href="https://t.me/KamCheiCS"
                 className={`cursor-pointer bg-${colors.primary} hover:bg-${colors.primaryDark} text-white py-3 px-4 rounded-lg font-medium transition-all mt-3`}
               >
                 Apply Now
-              </button>
+              </a>
             </div>
           </div>
         </motion.div>

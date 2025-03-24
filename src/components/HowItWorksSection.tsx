@@ -132,9 +132,9 @@ const HowItWorks = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 1 }}
         >
-          <button className="cursor-pointer bg-orange-500 hover:bg-orange-600 text-white py-3 px-8 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl">
+          <a href="https://t.me/KamCheiCS" target="_blank" className="cursor-pointer bg-orange-500 hover:bg-orange-600 text-white py-3 px-8 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl">
             Apply Now
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>

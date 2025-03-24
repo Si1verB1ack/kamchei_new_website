@@ -87,9 +87,9 @@ const Eligibility = () => {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.2 }}
             >
-              <button className="cursor-pointer bg-white text-orange-600 hover:bg-gray-100 py-3 px-8 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl text-lg">
+              <a href="https://t.me/KamCheiCS" target="_blank" className="cursor-pointer bg-white text-orange-600 hover:bg-gray-100 py-3 px-8 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl text-lg">
                 Apply For A Loan Now
-              </button>
+              </a>
             </motion.div>
           </div>
         </div>

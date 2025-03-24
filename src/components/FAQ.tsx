@@ -78,8 +78,8 @@ const FAQ = ({ colors }: Props) => {
             <span className={`text-${colors.accent}`}>Questions</span>
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto">
-            Find answers to common questions about our loan process, eligibility,
-            and repayment options.
+            Find answers to common questions about our loan process,
+            eligibility, and repayment options.
           </p>
         </motion.div>
 
@@ -90,8 +90,8 @@ const FAQ = ({ colors }: Props) => {
               <button
                 className={`cursor-pointer min-w-full text-left p-6 rounded-lg flex justify-between items-center ${
                   activeIndex === index
-                    ? `bg-gray-100 shadow-md`
-                    : `bg-white shadow-sm hover:bg-white hover:shadow-lg`
+                    ? `bg-gray-100 shadow-md transition-all`
+                    : `bg-white shadow-sm hover:bg-white hover:shadow-lg ease-in-out transition-all`
                 }`}
                 onClick={() => toggleFAQ(index)}
               >
@@ -140,11 +140,13 @@ const FAQ = ({ colors }: Props) => {
             Don't see your question here? Feel free to contact our customer
             support team.
           </p>
-          <button
-            className={`cursor-pointer bg-${colors.accent} hover:bg-${colors.primaryDark} text-white py-3 px-8 rounded-lg font-medium transition-all shadow-md hover:shadow-lg`}
+          <a
+            target="_blank"
+            href="https://t.me/KamCheiCS"
+            className={`cursor-pointer bg-orange-500 hover:bg-orange-600   text-white py-3 px-8 rounded-lg font-medium transition-all shadow-md hover:shadow-lg`}
           >
             Contact Support
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>

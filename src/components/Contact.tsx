@@ -65,12 +65,14 @@ const Contact = ({ colors }: Props) => {
               {index === 2 && (
                 <div className="mt-4 flex space-x-4">
                   <a
+                    target="_blank"
                     href="https://t.me/KamCheiCS"
                     className={`text-${colors.primary} hover:text-${colors.primaryDark} font-medium`}
                   >
                     Telegram
                   </a>
                   <a
+                    target="_blank"
                     href="https://www.facebook.com/kamchei"
                     className={`text-${colors.primary} hover:text-${colors.primaryDark} font-medium`}
                   >
