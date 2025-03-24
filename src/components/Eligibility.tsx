@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Users, MapPin, Briefcase } from "lucide-react";
 import { useInView } from "react-intersection-observer";
+import { FaGooglePlay, FaAppStoreIos } from "react-icons/fa";
 
 const Eligibility = () => {
   const eligibilityCriteria = [
@@ -28,8 +29,14 @@ const Eligibility = () => {
 
   return (
     <>
-      <section ref={ref} className="py-4 md:py-24 bg-gray-50" id="eligibility">
-        <div className="container mx-auto px-4">
+      <section ref={ref} className="py-16 md:py-24 bg-gray-50" id="eligibility">
+        {/* Card container */}
+        <motion.div
+          className="p-24"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}
+        >
           <motion.h2
             className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center"
             initial={{ opacity: 0, y: 20 }}
@@ -39,7 +46,7 @@ const Eligibility = () => {
             Who Can <span className="text-orange-500">Apply?</span>
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {eligibilityCriteria.map((item, index) => (
               <motion.div
                 key={index}
@@ -58,38 +65,59 @@ const Eligibility = () => {
               </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
-      {/* Quick Apply Section */}
-      <section className="py-16 bg-gradient-to-r from-orange-600 to-orange-400 text-white">
+      {/* CTA Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-r from-orange-600 to-orange-500 text-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto text-center">
             <motion.h2
               className="text-3xl md:text-4xl font-bold mb-6"
               initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
               Ready to Get Started?
             </motion.h2>
             <motion.p
-              className="text-lg md:text-xl mb-8 opacity-90"
+              className="text-lg mb-8"
               initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
             >
-              Our application process is quick and easy. Get the funds you need
-              in just a few steps.
+              Download our app now and get your loan application processed in
+              minutes
             </motion.p>
+
             <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center"
               initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
             >
-              <a href="https://t.me/KamCheiCS" target="_blank" className="cursor-pointer bg-white text-orange-600 hover:bg-gray-100 py-3 px-8 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl text-lg">
-                Apply For A Loan Now
-              </a>
+              <motion.a
+                href="https://play.google.com/store/apps/details?id=com.smile.lorn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-black text-white py-3 px-6 rounded-lg hover:bg-gray-900 transition-all"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <FaGooglePlay className="text-green-400" />
+                <span>Google Play</span>
+              </motion.a>
+              <motion.a
+                href="https://apps.apple.com/kh/app/kamchei-instant-loan-online/id1557801298"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-black text-white py-3 px-6 rounded-lg hover:bg-gray-900 transition-all"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <FaAppStoreIos className="text-blue-400" />
+                <span>App Store</span>
+              </motion.a>
             </motion.div>
           </div>
         </div>

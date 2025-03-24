@@ -62,8 +62,6 @@ function App() {
             element={
               <main className="w-full">
                 <Home />
-                <HowItWorks />
-                <Eligibility />
               </main>
             }
           />
