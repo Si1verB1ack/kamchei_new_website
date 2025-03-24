@@ -15,7 +15,7 @@ import HowItWorks from "./HowItWorksSection";
 import Eligibility from "./Eligibility";
 
 const Home = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [, setIsScrolled] = useState(false);
 
   // Handle scroll effect for potential navbar changes
   useEffect(() => {
